@@ -8,9 +8,89 @@
     <!-- CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.cdnfonts.com/css/steamflix-montserrat" rel="stylesheet">
+    <style>
+      .float {
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(4rem, 8vw, 6rem);
+        height: clamp(4rem, 8vw, 6rem);
+        padding: 0.75rem;
+        border: 1px solid #1f3864;
+        border-radius: 6px;
+        background: linear-gradient(145deg, #5a85d6, #4472c4);
+        color: #fff;
+        text-align: center;
+        box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+        animation: float-drift 2.4s ease-in-out infinite;
+        animation-delay: var(--d, 0s);
+      }
+
+      .float.tl {
+        left: -2%;
+        top: -4%;
+        --r: -15deg;
+        --d: 0s;
+        --sway: -4px;
+        --lift: -22px;
+      }
+
+      .float.tr {
+        right: -2%;
+        top: 5%;
+        --r: 25deg;
+        --d: -0.8s;
+        --sway: 4px;
+        --lift: -18px;
+      }
+
+      .float.bl {
+        left: -2%;
+        bottom: 5%;
+        --r: -25deg;
+        --d: -1.2s;
+        --sway: -3px;
+        --lift: -20px;
+      }
+
+      .float.br {
+        right: -2%;
+        bottom: -4%;
+        --r: -15deg;
+        --d: -1.8s;
+        --sway: 3px;
+        --lift: -24px;
+      }
+
+      @keyframes float-drift {
+        0% {
+          transform: translate3d(0, 0, 0) rotate(var(--r));
+        }
+        50% {
+          transform: translate3d(var(--sway), var(--lift), 0) rotate(calc(var(--r) + 3deg));
+        }
+        100% {
+          transform: translate3d(0, 0, 0) rotate(var(--r));
+        }
+      }
+
+      @media (max-width: 767px) {
+        .float {
+          display: none;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .float {
+          animation-duration: 4.8s;
+          --lift: -12px;
+        }
+      }
+    </style>
   </head>
   <body class="bg-white text-gray-900 antialiased">
-
     <!-- HEADER -->
     <header class="border-b border-gray-200">
 
@@ -46,6 +126,10 @@
         <!-- Gambar -->
         <div class="relative w-full max-w-md mx-auto lg:mx-0">
           <img src="assets/images/wipngajar0.jpeg" alt="WIP on utility!" class="w-full rounded-2xl shadow-xl" />
+          <div class="float tl" aria-hidden="true">Melayang 1</div>
+          <div class="float tr" aria-hidden="true">Melayang 2</div>
+          <div class="float bl" aria-hidden="true">Melayang 3</div>
+          <div class="float br" aria-hidden="true">Melayang 4</div>
         </div>
         
         <!-- Teks utama -->
