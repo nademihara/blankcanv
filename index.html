@@ -8,95 +8,15 @@
     <!-- CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.cdnfonts.com/css/steamflix-montserrat" rel="stylesheet">
-    <style>
-      .float {
-        position: absolute;
-        z-index: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: clamp(4rem, 8vw, 6rem);
-        height: clamp(4rem, 8vw, 6rem);
-        padding: 0.75rem;
-        border: 1px solid #1f3864;
-        border-radius: 6px;
-        background: linear-gradient(145deg, #5a85d6, #4472c4);
-        color: #fff;
-        text-align: center;
-        box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
-        animation: float-drift 2.4s ease-in-out infinite;
-        animation-delay: var(--d, 0s);
-      }
-
-      .float.tl {
-        left: -2%;
-        top: -4%;
-        --r: -15deg;
-        --d: 0s;
-        --sway: -4px;
-        --lift: -22px;
-      }
-
-      .float.tr {
-        right: -2%;
-        top: 5%;
-        --r: 25deg;
-        --d: -0.8s;
-        --sway: 4px;
-        --lift: -18px;
-      }
-
-      .float.bl {
-        left: -2%;
-        bottom: 5%;
-        --r: -25deg;
-        --d: -1.2s;
-        --sway: -3px;
-        --lift: -20px;
-      }
-
-      .float.br {
-        right: -2%;
-        bottom: -4%;
-        --r: -15deg;
-        --d: -1.8s;
-        --sway: 3px;
-        --lift: -24px;
-      }
-
-      @keyframes float-drift {
-        0% {
-          transform: translate3d(0, 0, 0) rotate(var(--r));
-        }
-        50% {
-          transform: translate3d(var(--sway), var(--lift), 0) rotate(calc(var(--r) + 3deg));
-        }
-        100% {
-          transform: translate3d(0, 0, 0) rotate(var(--r));
-        }
-      }
-
-      @media (max-width: 767px) {
-        .float {
-          display: none;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .float {
-          animation-duration: 4.8s;
-          --lift: -12px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="src/style.css">
   </head>
-  <body class="bg-white text-gray-900 antialiased">
+  <body class="text-gray-900 antialiased">
     <!-- HEADER -->
-    <header class="border-b border-gray-200">
+    <header class="site-header border-b border-gray-200">
 
       <!--NAVBAR-->
 
-      <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+      <nav class="site-nav mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
 
 
         <!--LOGO-->
@@ -121,31 +41,100 @@
     </header>
 
     <!-- MAIN CONTENT -->
-    <main class="bg-white">
-      <section class="mx-auto grid max-w-5xl grid-cols-1 gap-1 px-4 py-16 lg:grid-cols-2 lg:items-center lg:py-24">
-        <!-- Gambar -->
-        <div class="relative w-full max-w-md mx-auto lg:mx-0">
-          <img src="assets/images/wipngajar0.jpeg" alt="WIP on utility!" class="w-full rounded-2xl shadow-xl" />
+    <main>
+      <section class="portfolio-container">
+        <h1 class="main-title">WIP</h1>
+
+        <div class="content-wrapper">
+          <div class="left-section">
+            <div class="badge-card rotated-left">
+              <span class="edition-text">WIP 2026</span>
+              <div class="badge-icons" aria-hidden="true">
+                <span>⚡</span>
+                <span>✦</span>
+              </div>
+            </div>
+            <p class="tagline">
+              Mandiri dan<br>
+              profesional<br>
+              berakhlak mulia
+            </p>
+          </div>
+
+          <div class="folder-container">
+            <div class="album" id="wip-album">
+              <div class="album-scene">
+                <div class="photo-stack" id="wip-photo-stack" aria-hidden="true">
+                  <button class="photo-card" type="button" data-title="Belajar Bersama" data-description="Momen kegiatan belajar bersama teman-teman WIP.">
+                    <img src="assets/images/wipngajar0.jpeg" alt="Belajar bersama teman-teman WIP" />
+                  </button>
+                  <button class="photo-card" type="button" data-title="Berbagi Ilmu" data-description="Suasana berbagi ilmu dan pengalaman di WIP.">
+                    <img src="assets/images/wipngajar0.jpeg" alt="Berbagi ilmu di WIP" />
+                  </button>
+                  <button class="photo-card" type="button" data-title="Kegiatan WIP" data-description="Salah satu momen kegiatan komunitas WIP on Utility.">
+                    <img src="assets/images/wipngajar0.jpeg" alt="Kegiatan komunitas WIP on Utility" />
+                  </button>
+                  <button class="photo-card" type="button" data-title="Tumbuh Bersama" data-description="Belajar dan berkembang bersama sebagai komunitas.">
+                    <img src="assets/images/wipngajar0.jpeg" alt="Kebersamaan komunitas WIP" />
+                  </button>
+                  <button class="photo-card" type="button" data-title="Kenangan WIP" data-description="Kumpulan kenangan dari perjalanan WIP on Utility.">
+                    <img src="assets/images/wipngajar0.jpeg" alt="Kenangan bersama WIP" />
+                  </button>
+                </div>
+
+                <button class="folder-cover" type="button" aria-expanded="false" aria-controls="wip-photo-stack" aria-label="Buka album foto">
+                  <span class="folder-tab"></span>
+                  <span class="folder-body">
+                    <span class="folder-title">
+                      <strong>Album Foto WIP</strong>
+                      <span id="folder-hint">Klik folder untuk melihat foto</span>
+                    </span>
+                  </span>
+                </button>
+              </div>
+
+              <section class="vision-card" aria-labelledby="vision-title">
+                <h2 id="vision-title">Visi</h2>
+                <p>
+                  Mencetak individu dan kelompok yang mandiri dan profesional di bidang informatika, memiliki jiwa leadership dan entrepreneurship, serta berorganisasi berlandaskan akhlak mulia.
+                </p>
+              </section>
+            </div>
+          </div>
+
+          <div class="right-section">
+            <div class="profile-info">
+              <h2>WIP:<br>Journey!!</h2>
+              <p class="subtitle">WIP on Utility</p>
+            </div>
+
+            <nav class="menu-card rotated-right" aria-label="Navigasi utama">
+              <ul>
+                <li>
+                  <span class="menu-icon">▶</span>
+                  <a href="index.html">Home</a>
+                  <span class="check-icon" aria-hidden="true">✓</span>
+                </li>
+                <li>
+                  <span class="menu-icon"></span>
+                  <a href="about.html">Bidang</a>
+                </li>
+                <li>
+                  <span class="menu-icon"></span>
+                  <a href="contact.html">Project</a>
+                </li>
+              </ul>
+            </nav>
+
+            <a class="inline-block rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500" href="#">
+              Hayu liat liat
+            </a>
+          </div>
+
           <div class="float tl" aria-hidden="true">Melayang 1</div>
           <div class="float tr" aria-hidden="true">Melayang 2</div>
           <div class="float bl" aria-hidden="true">Melayang 3</div>
           <div class="float br" aria-hidden="true">Melayang 4</div>
-        </div>
-        
-        <!-- Teks utama -->
-        <div class="text-center lg:text-left">
-          <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">WIP: Journey!!</h1>
-          <br class="hidden sm:block" />
-          <p class="font-display text-2xl font-bold tracking-tight text-slate-1000 bg-slate-900 text-white px-2 py-1 w-fit">Visi</p>
-          <p class="mt-4 text-lg text-slate-600 leading-relaxed">
-            Mencetak individu dan kelompok manusia yang mandiri dan profesional dalam bidang keahlian informatika, mempunyai jiwa leadership dan entrepreneurship serta memiliki kemampuan berorganisasi yang berlandaskan akhlak mulia .
-          </p>
-          <!-- Tombol hyperlink -->
-          <div class="mt-6">
-            <a href="#" class="inline-block rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500">
-              Hayu liat liat
-            </a>
-          </div>
         </div>
       </section>
     </main>
@@ -160,5 +149,24 @@
       </div>
     </footer>
 
+    <dialog class="photo-viewer" id="photo-viewer" aria-labelledby="viewer-title">
+      <div class="viewer-header">
+        <span id="viewer-count"></span>
+        <button class="viewer-close" type="button" aria-label="Tutup foto">&times;</button>
+      </div>
+      <div class="viewer-image-wrap">
+        <img id="viewer-image" src="" alt="" />
+      </div>
+      <div class="viewer-footer">
+        <button class="viewer-nav" id="viewer-previous" type="button" aria-label="Foto sebelumnya">&#8592;</button>
+        <div class="viewer-caption">
+          <h2 id="viewer-title"></h2>
+          <p id="viewer-description"></p>
+        </div>
+        <button class="viewer-nav" id="viewer-next" type="button" aria-label="Foto berikutnya">&#8594;</button>
+      </div>
+    </dialog>
+
+    <script src="src/index.js" defer></script>
   </body>
 </html>
