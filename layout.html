@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Layout Floating</title>
+<style>
+  :root {
+    --blue: #4472c4;
+    --blue-dark: #1f3864;
+    --bg: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { height: 100%; }
+
+  body {
+    background: radial-gradient(ellipse at center, #f7f9fd 0%, var(--bg) 70%);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .stage {
+    position: relative;
+    width: min(100vw, 177.78vh);
+    aspect-ratio: 868 / 493;
+    border: 1px solid #d0d0d0;
+  }
+
+  .box {
+    position: absolute;
+    background: linear-gradient(145deg, #5a85d6, var(--blue));
+    border: 1px solid var(--blue-dark);
+    border-radius: 6px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    font-size: clamp(0.75rem, 1.6vw, 1.1rem);
+  }
+
+  /* Layout tetap */
+  .main       { left: 12.6%; top: 30.8%; width: 34.8%; height: 42.8%; z-index: 2; }
+  .bar-top    { left: 52%;   top: 33.5%; width: 34.7%; height: 14.8%; z-index: 2; }
+  .bar-bottom { left: 52%;   top: 52.1%; width: 40.3%; height: 19.1%; z-index: 2; }
+
+  /* Kotak melayang: posisi tetap, bergerak bolak-balik diagonal */
+  .float {
+    z-index: 1;
+    animation: drift 3.2s ease-in-out infinite alternate;
+    animation-delay: var(--d, 0s);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+  }
+
+  .float.tl { left: 3.6%;  top: 2.5%;  width: 13.5%; height: 22%;   --r: -15deg; --d: 0s;     --x: 16px; --y: -16px; }
+  .float.tr { left: 80.6%; top: 6.8%;  width: 13.2%; height: 22%;   --r: 25deg;  --d: -0.8s; --x: 14px; --y: -14px; }
+  .float.bl { left: 3.5%;  top: 74.3%; width: 13.8%; height: 22.5%; --r: -25deg; --d: -1.6s; --x: 18px; --y: -18px; }
+  .float.br { left: 84%;   top: 74%;   width: 13.5%; height: 21.5%; --r: -15deg; --d: -2.4s; --x: 15px; --y: -15px; }
+
+  @keyframes drift {
+    0%   { transform: translate(calc(var(--x) * -1), calc(var(--y) * -1)) rotate(var(--r)); }
+    100% { transform: translate(var(--x), var(--y)) rotate(var(--r)); }
+  }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="box main">Kotak Utama</div>
+    <div class="box bar-top">Panel Atas</div>
+    <div class="box bar-bottom">Panel Bawah</div>
+
+    <div class="box float tl">Melayang 1</div>
+    <div class="box float tr">Melayang 2</div>
+    <div class="box float bl">Melayang 3</div>
+    <div class="box float br">Melayang 4</div>
+  </div>
+</body>
+</html>
