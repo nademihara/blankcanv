@@ -6,72 +6,10 @@
     <meta name="description" content="WIP pasran!">
     <title>WIP on utility!</title>
     <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="/src/style.css">
   </head>
   <body class="flex flex-col min-h-screen bg-white text-gray-900 antialiased">
-
-    <!-- HEADER -->
-    <header class="h-20 border-b border-gray-200">
-      <nav class="mx-auto flex h-full max-w-6xl items-center justify-between px-4">
-        <!--LOGO-->
-        <div class="flex items-center gap-2">
-          <a href="https://www.instagram.com/wip_pas/" class="text-xl font-bold">
-            <img src="assets/icons/wiplogo.png" alt="Logo" class="h-10 w-auto">
-          </a>
-          <p class="text-lg text-black font-segoe font-bold"></p>
-        </div>
-
-        <!--LIST/PILIHAN NAVBAR-->
-        <ul class="flex gap-6 text-sm font-medium">
-          <li><a href="index.html" class="hover:text-blue-600">Home</a></li>
-          <li><a href="about.html" class="hover:text-blue-600">Bidang</a></li>
-          <li><a href="contact.html" class="hover:text-blue-600">Project</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- MAIN CONTENT -->
-    <main class="flex-grow bg-white">
-      <section class="mx-auto grid max-w-5xl grid-cols-1 gap-12 px-4 py-16 lg:grid-cols-2 lg:items-center lg:py-24 relative">
-        <!-- Gambar Utama & Efek Background -->
-        <div class="relative w-full max-w-md mx-auto lg:mx-0">
-          <!-- Background Floating Objects -->
-          <div class="absolute -top-10 -left-10 w-24 h-24 bg-blue-100 rounded-full animate-bounce-slow opacity-50 z-0"></div>
-          <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-purple-100 rounded-full animate-pulse-slow opacity-50 z-0"></div>
-          
-          <img src="assets/images/wipngajar0.jpeg" alt="WIP on utility!" class="w-full rounded-2xl shadow-xl relative z-10" />
-        </div>
-        
-        <!-- Teks utama -->
-        <div class="text-center lg:text-left">
-          <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">WIP: Journey!!</h1>
-          <p class="inline-block mt-4 text-sm font-bold tracking-tight text-white bg-slate-900 px-3 py-1 rounded">Visi</p>
-          <p class="mt-4 text-lg text-slate-600 leading-relaxed">
-            Mencetak individu dan kelompok manusia yang mandiri dan profesional dalam bidang keahlian informatika, mempunyai jiwa leadership dan entrepreneurship serta memiliki kemampuan berorganisasi yang berlandaskan akhlak mulia.
-          </p>
-
-          <!-- Tombol hyperlink -->
-          <div class="mt-6">
-            <a href="#" class="inline-block rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500">
-              Hayu liat liat
-            </a>
-          </div>
-        </div>
-
-        <!-- FLOAT BOXES -->
-         <div class="box float tl z-50"><img src="assets/icons/canva.png"></div>
-         <div class="box float tr z-50"><img src="assets/icons/mads.png"></div>
-         <div class="box float bl z-50"><img src="assets/icons/mkrt.png"></div>
-         <div class="box float br z-50"><img src="assets/icons/vsc.png"></div>
-      </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="h-16 border-t border-gray-200">
-      <div class="mx-auto flex h-full max-w-6xl items-center px-4 text-sm text-gray-500">
-        &copy; WIP on Utility!
-      </div>
-    </footer>
-
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
