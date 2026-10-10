@@ -1,0 +1,5 @@
+/* Sumber build Tailwind — jangan taruh style custom di sini.
+   Style custom tetap di src/style.css (di-link setelah file hasil build). */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -59,8 +59,11 @@ body {
 }
 
 .site-header.island .site-nav img {
-  width: 2rem;
+  /* Jangan dipaksa kotak: rasio logo harus tetap (canvas 16:9),
+     cukup tingginya aja yang dikecilin biar nggak gepeng. */
+  width: auto;
   height: 2rem;
+  object-fit: contain;
 }
 
 .portfolio-container {
@@ -76,10 +79,14 @@ body {
 .main-title {
   z-index: 3;
   margin-bottom: 2rem;
-  font-size: clamp(4rem, 12vw, 11rem);
+  /* Dikecilin dari clamp(4rem, 12vw, 11rem) -> 176px kepake buat 3 huruf doang.
+     5.5rem = 88px biar "WIP: ON JOURNEYYY!!!" muat 1 baris di layar lebar. */
+  font-size: clamp(2.5rem, 6.5vw, 5.5rem);
   font-weight: 900;
   line-height: 0.85;
   letter-spacing: -0.03em;
+  text-align: center;
+  text-wrap: balance;
   text-transform: uppercase;
   user-select: none;
 }
@@ -581,9 +588,9 @@ body {
   width: 4rem;
   height: 4rem;
   padding: 0.75rem;
-  border: 1px solid #1f3864;
+  /* border: 1px solid #1f3864; */
   border-radius: 6px;
-  background: linear-gradient(145deg, #5a85d6, #4472c4);
+  /* background: linear-gradient(145deg, #5a85d6, #4472c4); */
   color: #fff;
   text-align: center;
   box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);

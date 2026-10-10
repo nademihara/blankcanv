@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="WIP pasran!">
     <title>WIP on utility!</title>
-    <!-- CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.cdnfonts.com/css/steamflix-montserrat" rel="stylesheet">
+    <!-- Tailwind di-build lokal (bun run build) -> src/tailwind.css -->
+    <link rel="stylesheet" href="src/tailwind.css">
+    <!-- Font di-load async biar nggak nge-block render -->
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+    <link href="https://fonts.cdnfonts.com/css/steamflix-montserrat" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.cdnfonts.com/css/steamflix-montserrat" rel="stylesheet"></noscript>
+    <!-- Style custom, di-link SETELAH Tailwind biar tetap menang kalau ada bentrok,rawan sih hehe -->
     <link rel="stylesheet" href="src/style.css">
   </head>
   <body class="text-gray-900 antialiased">
@@ -22,12 +26,13 @@
         <!--LOGO-->
         <div class="flex items-center gap-2">
           <a href="https://www.instagram.com/wip_pas/" class="text-xl font-bold">
-            <img src="assets/icons/wiplogo.png" alt="Logo" class="h-10 w-auto">
+            <img src="assets/icons/wiplogo.webp" alt="Logo" width="320" height="180" decoding="async" class="h-10 w-auto">
           </a>
 
           <!-- TEST FONT -->
           <!-- <p class="text-lg text-black font-[Segoe_UI] font-bold">WIP on Utility</p> -->
-           <p class="text-lg text-black font-segoe font-bold"></p>
+           <!-- Abaikan bagian ini,males gw ngehapusnya -->
+           <!-- <p class="text-lg text-black font-segoe font-bold"></p> -->
 
         </div>
 
@@ -41,19 +46,26 @@
     </header>
 
     <!-- MAIN CONTENT -->
+     <!-- Bagian paling ribet buajingann -->
     <main>
       <section class="portfolio-container">
-        <h1 class="main-title">WIP</h1>
+
+        <!-- Judul yang guedeeee -->
+        <h1 class="main-title">WIP: on Journeyy!!!</h1>
 
         <div class="content-wrapper">
           <div class="left-section">
+
+            <!-- Kartu yang ada di sebelah kirii -->
             <div class="badge-card rotated-left">
-              <span class="edition-text">WIP 2026</span>
+              <span class="edition-text">????????</span>
               <div class="badge-icons" aria-hidden="true">
-                <span>⚡</span>
+                <span></span>
                 <span>✦</span>
               </div>
             </div>
+
+            <!-- Teks yang ada di sebelah krii -->
             <p class="tagline">
               Mandiri dan<br>
               profesional<br>
@@ -61,38 +73,47 @@
             </p>
           </div>
 
+          <!-- Masuk ke bagian Folder interaktifnyaa -->
+
           <div class="folder-container">
+            <!-- Kalau ini bagian foldernya -->
             <div class="album" id="wip-album">
+
+              <!-- Ini bagian belakang si foldernya -->
               <div class="album-scene">
                 <div class="photo-stack" id="wip-photo-stack" aria-hidden="true">
-                  <button class="photo-card" type="button" data-title="Belajar Bersama" data-description="Momen kegiatan belajar bersama teman-teman WIP.">
-                    <img src="assets/images/wipngajar0.jpeg" alt="Belajar bersama teman-teman WIP" />
+                  <button class="photo-card" type="button" data-title="Belajar Bersama" data-description="WIP ngajar coyy">
+                    <img src="assets/images/wipngajar0.webp" width="1280" height="960" decoding="async" alt="WIP ngajar" />
                   </button>
-                  <button class="photo-card" type="button" data-title="Berbagi Ilmu" data-description="Suasana berbagi ilmu dan pengalaman di WIP.">
-                    <img src="assets/images/wipngajar0.jpeg" alt="Berbagi ilmu di WIP" />
+                  <button class="photo-card" type="button" data-title="Berbagi Ilmu" data-description="Gak tau dari jaman apa">
+                    <img src="assets/images/wipp1.webp" width="1280" height="960" decoding="async" alt="Tahun 60an" />
                   </button>
-                  <button class="photo-card" type="button" data-title="Kegiatan WIP" data-description="Salah satu momen kegiatan komunitas WIP on Utility.">
-                    <img src="assets/images/wipngajar0.jpeg" alt="Kegiatan komunitas WIP on Utility" />
+                  <!-- <button class="photo-card" type="button" data-title="Kegiatan WIP" data-description="Salah satu momen kegiatan komunitas WIP on Utility.">
+                    <img src="assets/images/wipngajar0.webp" width="1280" height="960" decoding="async" alt="Kegiatan komunitas WIP on Utility" />
                   </button>
                   <button class="photo-card" type="button" data-title="Tumbuh Bersama" data-description="Belajar dan berkembang bersama sebagai komunitas.">
-                    <img src="assets/images/wipngajar0.jpeg" alt="Kebersamaan komunitas WIP" />
+                    <img src="assets/images/wipngajar0.webp" width="1280" height="960" decoding="async" alt="Kebersamaan komunitas WIP" />
                   </button>
                   <button class="photo-card" type="button" data-title="Kenangan WIP" data-description="Kumpulan kenangan dari perjalanan WIP on Utility.">
-                    <img src="assets/images/wipngajar0.jpeg" alt="Kenangan bersama WIP" />
-                  </button>
+                    <img src="assets/images/wipngajar0.webp" width="1280" height="960" decoding="async" alt="Kenangan bersama WIP" />
+                  </button> -->
                 </div>
 
+                <!-- UX buwat foldernya -->
+                <!-- Masih dalam tahap percobaan aja sih -->
+                 <!-- Agak ribet main di animasinya jujur -->
                 <button class="folder-cover" type="button" aria-expanded="false" aria-controls="wip-photo-stack" aria-label="Buka album foto">
                   <span class="folder-tab"></span>
                   <span class="folder-body">
                     <span class="folder-title">
-                      <strong>Album Foto WIP</strong>
-                      <span id="folder-hint">Klik folder untuk melihat foto</span>
+                      <strong>Our journey</strong>
+                      <span id="folder-hint"></span>
                     </span>
                   </span>
                 </button>
               </div>
-
+              
+              <!-- VISI nya -->
               <section class="vision-card" aria-labelledby="vision-title">
                 <h2 id="vision-title">Visi</h2>
                 <p>
@@ -102,16 +123,22 @@
             </div>
           </div>
 
+          <!-- Teks di sebelah kanan uy,yang WIP: journeyy anjayyy -->
+           <!-- bagian ini entah kenapa bug gitu anjir -->
+            <!-- fix nanti jelah -->
           <div class="right-section">
             <div class="profile-info">
               <h2>WIP:<br>Journey!!</h2>
               <p class="subtitle">WIP on Utility</p>
             </div>
 
+            <!-- Panel di sebelah kanan coy -->
             <nav class="menu-card rotated-right" aria-label="Navigasi utama">
               <ul>
                 <li>
-                  <span class="menu-icon">▶</span>
+                  <!-- Bingung anjir ini mau diisi apa -->
+                   <!-- Apa jadi hiasan aja kalik ya,atau dibikin interaktif? -->
+                  <span class="menu-icon"></span>
                   <a href="index.html">Home</a>
                   <span class="check-icon" aria-hidden="true">✓</span>
                 </li>
@@ -131,10 +158,14 @@
             </a>
           </div>
 
-          <div class="float tl" aria-hidden="true">Melayang 1</div>
+          <!-- <div class="float tl" aria-hidden="true">Melayang 1</div>
           <div class="float tr" aria-hidden="true">Melayang 2</div>
           <div class="float bl" aria-hidden="true">Melayang 3</div>
-          <div class="float br" aria-hidden="true">Melayang 4</div>
+          <div class="float br" aria-hidden="true">Melayang 4</div> -->
+          <img src="assets/icons/canva.png" alt="" class="float tl" aria-hidden="true">
+          <img src="assets/icons/mads.png" alt="" class="float tr" aria-hidden="true">
+          <img src="assets/icons/mkrt.png" alt="" class="float bl" aria-hidden="true">
+          <img src="assets/icons/vsc.png" alt="" class="float br" aria-hidden="true">
         </div>
       </section>
     </main>

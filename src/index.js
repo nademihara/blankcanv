@@ -12,13 +12,21 @@ const siteHeader = document.querySelector(".site-header");
 let activePhotoIndex = 0;
 let previousScrollY = window.scrollY;
 let accumulatedScrollDelta = 0;
+let headerIsland = false;
+let scrollFramePending = false;
+
+function setHeaderIsland(shouldFloat) {
+  if (headerIsland === shouldFloat) return;
+  headerIsland = shouldFloat;
+  siteHeader.classList.toggle("island", shouldFloat);
+}
 
 function setAlbumOpen(isOpen) {
   album.classList.toggle("is-open", isOpen);
   folderCover.setAttribute("aria-expanded", String(isOpen));
-  folderCover.setAttribute("aria-label", isOpen ? "Tutup album foto" : "Buka album foto");
+  folderCover.setAttribute("aria-label", isOpen ? "Tutup" : "Buka");
   photoStack.setAttribute("aria-hidden", String(!isOpen));
-  folderHint.textContent = isOpen ? "Klik folder untuk menutup album" : "Klik folder untuk melihat foto";
+  folderHint.textContent = isOpen ? "" : "";
 }
 
 function showPhoto(index) {
@@ -80,14 +88,16 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-window.addEventListener("scroll", () => {
+function updateHeaderFromScroll() {
+  scrollFramePending = false;
+
   const currentScrollY = window.scrollY;
   const scrollDelta = currentScrollY - previousScrollY;
   previousScrollY = currentScrollY;
 
   if (currentScrollY <= 24) {
     accumulatedScrollDelta = 0;
-    siteHeader.classList.remove("island");
+    setHeaderIsland(false);
     return;
   }
 
@@ -98,10 +108,18 @@ window.addEventListener("scroll", () => {
   }
 
   if (accumulatedScrollDelta >= 12) {
-    siteHeader.classList.add("island");
+    setHeaderIsland(true);
     accumulatedScrollDelta = 0;
   } else if (accumulatedScrollDelta <= -12) {
-    siteHeader.classList.remove("island");
+    setHeaderIsland(false);
     accumulatedScrollDelta = 0;
   }
+}
+
+// Di-coalesce per frame (rAF) biar nggak nge-layout tiap event scroll,
+// dan class `island` cuma disentuh kalau state-nya beneran berubah.
+window.addEventListener("scroll", () => {
+  if (scrollFramePending) return;
+  scrollFramePending = true;
+  requestAnimationFrame(updateHeaderFromScroll);
 }, { passive: true });
