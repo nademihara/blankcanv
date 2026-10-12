@@ -1,8 +1,9 @@
 const album = document.querySelector("#wip-album");
-const folderCover = album.querySelector(".folder-cover");
-const photoStack = album.querySelector(".photo-stack");
-const folderHint = album.querySelector("#folder-hint");
-const photoButtons = [...photoStack.querySelectorAll(".photo-card")];
+const folder = album.querySelector("#wip-folder");
+const folderBack = folder.querySelector(".folder-back");
+const folderFront = folder.querySelector(".folder-front");
+const photoStack = folder.querySelector(".paper-stack");
+const photoButtons = [...photoStack.querySelectorAll(".paper")];
 const photoViewer = document.querySelector("#photo-viewer");
 const viewerImage = document.querySelector("#viewer-image");
 const viewerCount = document.querySelector("#viewer-count");
@@ -22,11 +23,15 @@ function setHeaderIsland(shouldFloat) {
 }
 
 function setAlbumOpen(isOpen) {
-  album.classList.toggle("is-open", isOpen);
-  folderCover.setAttribute("aria-expanded", String(isOpen));
-  folderCover.setAttribute("aria-label", isOpen ? "Tutup" : "Buka");
+  folder.classList.toggle("open", isOpen);
+  folderFront.setAttribute("aria-expanded", String(isOpen));
+  folderFront.setAttribute("aria-label", isOpen ? "Tutup album foto" : "Buka album foto");
   photoStack.setAttribute("aria-hidden", String(!isOpen));
-  folderHint.textContent = isOpen ? "" : "";
+  photoStack.toggleAttribute("inert", !isOpen);
+}
+
+function toggleAlbum() {
+  setAlbumOpen(folderFront.getAttribute("aria-expanded") !== "true");
 }
 
 function showPhoto(index) {
@@ -41,10 +46,12 @@ function showPhoto(index) {
   viewerCount.textContent = `${activePhotoIndex + 1} / ${photoButtons.length}`;
 }
 
-folderCover.addEventListener("click", () => {
-  setAlbumOpen(folderCover.getAttribute("aria-expanded") !== "true");
+folderFront.addEventListener("click", toggleAlbum);
+folder.addEventListener("click", (event) => {
+  if (event.target === folder || event.target === folderBack) {
+    toggleAlbum();
+  }
 });
-
 photoButtons.forEach((photoButton, index) => {
   photoButton.addEventListener("click", () => {
     showPhoto(index);
@@ -73,6 +80,7 @@ photoViewer.addEventListener("click", (event) => {
 photoViewer.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     event.preventDefault();
+    event.stopPropagation();
     photoViewer.close();
   }
 });
@@ -82,9 +90,9 @@ photoViewer.addEventListener("close", () => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && !photoViewer.open && album.classList.contains("is-open")) {
+  if (event.key === "Escape" && !photoViewer.open && folder.classList.contains("open")) {
     setAlbumOpen(false);
-    folderCover.focus();
+    folderFront.focus();
   }
 });
 

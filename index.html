@@ -76,43 +76,24 @@
           <!-- Masuk ke bagian Folder interaktifnyaa -->
 
           <div class="folder-container">
-            <!-- Kalau ini bagian foldernya -->
             <div class="album" id="wip-album">
-
-              <!-- Ini bagian belakang si foldernya -->
-              <div class="album-scene">
-                <div class="photo-stack" id="wip-photo-stack" aria-hidden="true">
-                  <button class="photo-card" type="button" data-title="Belajar Bersama" data-description="WIP ngajar coyy">
-                    <img src="assets/images/wipngajar0.webp" width="1280" height="960" decoding="async" alt="WIP ngajar" />
+              <div class="folder-stage">
+                <div class="folder" id="wip-folder">
+                  <div class="folder-back" aria-hidden="true"></div>
+                  <div class="paper-stack" id="wip-photo-stack" aria-hidden="true" inert>
+                    <button class="paper paper-1" type="button" data-title="Belajar Bersama" data-description="WIP ngajar coyy">
+                      <img src="assets/images/wipngajar0.webp" width="1280" height="960" decoding="async" alt="WIP ngajar" />
+                    </button>
+                    <button class="paper paper-3" type="button" data-title="Berbagi Ilmu" data-description="Gak tau dari jaman apa">
+                      <img src="assets/images/wipp1.webp" width="1280" height="960" decoding="async" alt="Tahun 60an" />
+                    </button>
+                  </div>
+                  <button class="folder-front" type="button" aria-expanded="false" aria-controls="wip-photo-stack" aria-label="Buka album foto">
+                    <span class="folder-label"></span>
                   </button>
-                  <button class="photo-card" type="button" data-title="Berbagi Ilmu" data-description="Gak tau dari jaman apa">
-                    <img src="assets/images/wipp1.webp" width="1280" height="960" decoding="async" alt="Tahun 60an" />
-                  </button>
-                  <!-- <button class="photo-card" type="button" data-title="Kegiatan WIP" data-description="Salah satu momen kegiatan komunitas WIP on Utility.">
-                    <img src="assets/images/wipngajar0.webp" width="1280" height="960" decoding="async" alt="Kegiatan komunitas WIP on Utility" />
-                  </button>
-                  <button class="photo-card" type="button" data-title="Tumbuh Bersama" data-description="Belajar dan berkembang bersama sebagai komunitas.">
-                    <img src="assets/images/wipngajar0.webp" width="1280" height="960" decoding="async" alt="Kebersamaan komunitas WIP" />
-                  </button>
-                  <button class="photo-card" type="button" data-title="Kenangan WIP" data-description="Kumpulan kenangan dari perjalanan WIP on Utility.">
-                    <img src="assets/images/wipngajar0.webp" width="1280" height="960" decoding="async" alt="Kenangan bersama WIP" />
-                  </button> -->
                 </div>
-
-                <!-- UX buwat foldernya -->
-                <!-- Masih dalam tahap percobaan aja sih -->
-                 <!-- Agak ribet main di animasinya jujur -->
-                <button class="folder-cover" type="button" aria-expanded="false" aria-controls="wip-photo-stack" aria-label="Buka album foto">
-                  <span class="folder-tab"></span>
-                  <span class="folder-body">
-                    <span class="folder-title">
-                      <strong>Our journey</strong>
-                      <span id="folder-hint"></span>
-                    </span>
-                  </span>
-                </button>
               </div>
-              
+
               <!-- VISI nya -->
               <section class="vision-card" aria-labelledby="vision-title">
                 <h2 id="vision-title">Visi</h2>
