@@ -1,0 +1,14 @@
+{
+  "name": "blankcanv",
+  "private": true,
+  "scripts": {
+    "build": "bun run build:css",
+    "build:css": "tailwindcss -i ./src/input.css -o ./src/tailwind.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./src/tailwind.css --watch",
+    "images": "bun run scripts/convert-images.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5",
+    "tailwindcss": "3.4.17"
+  }
+}
