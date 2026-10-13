@@ -1,3 +1,14 @@
+<!-- Masih uji coba ygy -->
+ <!-- Intinya liat2 tiap class/id ama tagnya -->
+ <!-- mungkin di hp itu dikit beda tampilannya sih -->
+
+ <!-- kalau mau commit/push,push ke branch testing,jangan main -->
+ <!-- kalau mau sekalian make framework misalnya vue.js,pake branch 'vue-m' jangan di testing-->
+ <!-- di testing ini kita fokus main html,css,jsnya ajah,gak perlu framwork yang gede2 kecuali buat csss ita make tailwind -->
+ <!-- Biar lebih gampang dipahami ama anggota yang lain juga kalau mau ikut contribute -->
+
+ <!-- saat ini reponya public coy -->
+  
 <!DOCTYPE html>
 <html lang="id">
   <head>
@@ -5,13 +16,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="WIP pasran!">
     <title>WIP on utility!</title>
-    <!-- Tailwind di-build lokal (bun run build) -> src/tailwind.css -->
+    <!-- Tailwind di-build lokal -> src/tailwind.css -->
     <link rel="stylesheet" href="src/tailwind.css">
     <!-- Font di-load async biar nggak nge-block render -->
     <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
     <link href="https://fonts.cdnfonts.com/css/steamflix-montserrat" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.cdnfonts.com/css/steamflix-montserrat" rel="stylesheet"></noscript>
-    <!-- Style custom, di-link SETELAH Tailwind biar tetap menang kalau ada bentrok,rawan sih hehe -->
+    <!-- Pokoknya yang ini harus ada biar interaksi ke elemn2 nya itu tetep ada -->
+    <!-- Style custom, di-link SETELAH Tailwind biar tetap diatas kalau ada bentrok,rawan sih hehe -->
     <link rel="stylesheet" href="src/style.css">
   </head>
   <body class="text-gray-900 antialiased">
@@ -31,7 +43,7 @@
 
           <!-- TEST FONT -->
           <!-- <p class="text-lg text-black font-[Segoe_UI] font-bold">WIP on Utility</p> -->
-           <!-- Abaikan bagian ini,males gw ngehapusnya -->
+           <!-- skip bagian ini,males gw ngehapusnya -->
            <!-- <p class="text-lg text-black font-segoe font-bold"></p> -->
 
         </div>
@@ -58,7 +70,7 @@
 
             <!-- Kartu yang ada di sebelah kirii -->
             <div class="badge-card rotated-left">
-              <span class="edition-text">????????</span>
+              <span class="edition-text">open to contribute!</span>
               <div class="badge-icons" aria-hidden="true">
                 <span></span>
                 <span>✦</span>
@@ -74,6 +86,8 @@
           </div>
 
           <!-- Masuk ke bagian Folder interaktifnyaa -->
+          <!-- disini juga ada logikanya ke src/index.js,kemungkinan besar belum di optimisasi -->
+           
 
           <div class="folder-container">
             <div class="album" id="wip-album">
@@ -143,6 +157,7 @@
           <div class="float tr" aria-hidden="true">Melayang 2</div>
           <div class="float bl" aria-hidden="true">Melayang 3</div>
           <div class="float br" aria-hidden="true">Melayang 4</div> -->
+          <!-- Masih banyak bug disini,cek ke style.cssnya ajah -->
           <img src="assets/icons/canva.png" alt="" class="float tl" aria-hidden="true">
           <img src="assets/icons/mads.png" alt="" class="float tr" aria-hidden="true">
           <img src="assets/icons/mkrt.png" alt="" class="float bl" aria-hidden="true">
@@ -157,7 +172,7 @@
     <!-- FOOTER -->
     <footer class="border-t border-gray-200">
       <div class="mx-auto max-w-6xl px-4 py-6 text-sm text-gray-500">
-        &copy; WIP on Utility!
+        &copy; Lorem ipsummm!
       </div>
     </footer>
 
