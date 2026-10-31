@@ -1,0 +1,6 @@
+/* Sumber build Tailwind — jangan taruh style custom di sini.
+   Style custom tetap di src/style.css, di-import sesudah file ini di src/main.js
+   biar tetap diatas kalau ada bentrok. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

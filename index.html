@@ -2,16 +2,22 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8">
-    <!-- Optimisasi tampilan -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Metadata -->
-    <meta name="description" content="Lorem ipsum">
+    <meta name="description" content="WIP pasran!">
     <title>WIP on utility!</title>
-    <link rel="stylesheet" href="src/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font di-load async biar nggak nge-block render -->
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+    <link href="https://fonts.cdnfonts.com/css/steamflix-montserrat" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.cdnfonts.com/css/steamflix-montserrat" rel="stylesheet"></noscript>
+    <!--
+      Tailwind + style custom nggak di-link manual di sini:
+      - src/input.css  -> directive Tailwind, di-import pertama di src/main.js
+      - src/style.css  -> style custom, di-import sesudahnya biar tetap diatas kalau ada bentrok
+      Urutannya dijaga lewat import di src/main.js.
+    -->
   </head>
-  <body class="flex flex-col min-h-screen bg-white text-gray-900 antialiased">
+  <body class="text-gray-900 antialiased">
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>

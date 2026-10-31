@@ -6,7 +6,7 @@ import TentangView from './views/TentangView.vue'
 import KontakView from './views/KontakView.vue'
 import GaleriView from './views/GaleriView.vue'
 
-// Routes conf 
+// Routes conf
 const routes = [
   { path: '/', name: 'home', component: HomeView },
   { path: '/bidang', name: 'bidang', component: BidangView },
@@ -18,7 +18,11 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  // Pindah halaman = scroll ke atas, biar sama kayak dulu pas masih multi-page.
+  scrollBehavior() {
+    return { top: 0 }
+  }
 })
 
 export default router

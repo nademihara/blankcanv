@@ -1,9 +1,17 @@
 <script setup>
+// about.html di branch testing masih kosong (0 byte), jadi ini placeholder dulu.
 </script>
 
 <template>
-  <section class="mx-auto max-w-5xl px-4 py-16">
-    <h1 class="text-3xl font-extrabold tracking-tight text-slate-900">Bidang</h1>
-    <p class="mt-4 text-lg text-slate-600">Halaman Bidang WIP.</p>
+  <section class="portfolio-container">
+    <h1 class="main-title">Bidang</h1>
+
+    <div class="vision-card mx-auto w-full max-w-2xl">
+      <h2>Halaman Bidang</h2>
+      <p>
+        Isi halaman Bidang masih dalam proses. Tulis di sini nanti ya,
+        sementara navigasinya tetep jalan dulu.
+      </p>
+    </div>
   </section>
 </template>
