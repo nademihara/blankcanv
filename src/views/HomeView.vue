@@ -235,6 +235,46 @@ onBeforeUnmount(() => {
     </div>
   </section>
 
+  <section class="home-section home-about" aria-labelledby="about-home-title">
+    <div class="home-section-heading">
+      <span>01</span>
+      <h2 id="about-home-title">Tentang WIP</h2>
+    </div>
+    <div class="home-about-grid">
+      <p class="home-about-lead">
+        Wadah kolaborasi untuk mahasiswa informatika yang tumbuh melalui belajar, berkarya,
+        dan berbagi dampak nyata bagi lingkungan sekitar.
+      </p>
+      <div class="home-about-copy">
+        <p>
+          WIP mengembangkan kemampuan teknis, kepemimpinan, kewirausahaan, dan organisasi
+          dalam satu komunitas yang berlandaskan akhlak mulia.
+        </p>
+        <RouterLink to="/tentang" class="section-link">Kenali WIP lebih lanjut <span aria-hidden="true">↗</span></RouterLink>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section home-projects" aria-labelledby="projects-home-title">
+    <div class="home-section-heading">
+      <span>02</span>
+      <h2 id="projects-home-title">Contoh Project</h2>
+    </div>
+    <div class="project-grid">
+      <article class="project-card">
+        <span class="project-number">01</span>
+        <div>
+          <p class="project-type">Website</p>
+          <h3>Website Organisasi</h3>
+          <p>Portal informasi, kegiatan, dan profil komunitas yang mudah diakses di perangkat apa pun.</p>
+        </div>
+        <span class="project-arrow" aria-hidden="true">↗</span>
+      </article>
+        <span class="project-arrow" aria-hidden="true">↗</span>
+      </article>
+    </div>
+  </section>
+
   <!-- PHOTO VIEWER -->
   <dialog
     ref="viewerEl"
